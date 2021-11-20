@@ -5,13 +5,15 @@ from sigmoid import *
 
 numT = 99
 
-data = np.sin(np.arange(0, numT+1)*(2*np.pi*10)/(numT+1))
+data = (1/3)*np.sin(np.arange(0, numT+1)*(2*np.pi*10)/(numT+1)) \
+    + (1/3)*np.sin(np.arange(0, numT+1)*(2*np.pi*2)/(numT+1)) \
+    + (1/3)*(np.arange(0, numT+1) * (3/(numT+1)))
 x = data[0:-1]
 y = data[1:]
 
 alpha = 0.5
-numN = 2000
-numK = 3
+numN = 50000
+numK = 5
 
 w = np.random.randn(numK)
 b = np.random.randn(numK)
