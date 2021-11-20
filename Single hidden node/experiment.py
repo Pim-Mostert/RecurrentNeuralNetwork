@@ -1,15 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
-sys.path.append("..")
-
 from Common import *
 
-def run(cfg0, x, y):
-    data = np.sin(np.arange(0, cfg0.numT+1)*(2*np.pi*10)/(cfg0.numT+1))
-    x = data[0:-1]
-    y = data[1:]
-    
+def run(cfg0, x, y):    
     w = np.random.randn(1)
     b = np.random.randn(1)
     v = cfg0.v0
@@ -78,7 +71,7 @@ def run(cfg0, x, y):
         log.y_hat[n] = y_hat
         log.mse[n] = (delta**2).sum() / cfg0.numN
         
-        if ((cfg0.feedback_step is not None) and (n % cfg0.feedback_step) == 0):
+        if ((cfg0.feedback_epoch is not None) and (n % cfg0.feedback_epoch) == 0):
             print(f'Finished {n}/{cfg0.numN}')
             
     return log
