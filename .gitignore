@@ -129,8 +129,6 @@ dmypy.json
 # vscode ide stuff
 *.code-workspace
 .history
-.vscode/*
-!.vscode/extensions.json
 
 # vim stuff
 *.swp
